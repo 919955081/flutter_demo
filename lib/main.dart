@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/follow/baseHomeDetail.dart';
 import 'dart:math';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_demo/home_page.dart';
@@ -70,6 +71,10 @@ class _MyHomePageState extends State<MyHomePage> {
       g = random.nextInt(MAX);
       b = random.nextInt(MAX);
     });
+  }
+  void GotoPage(){
+    //
+    Navigator.push(context, new MaterialPageRoute(builder: (context)=>baseHomeDetail()));
   }
   void onLogin(){
     if(accountController.text.toString() == '123' && pwdController.text.toString() == "123"){
@@ -201,7 +206,8 @@ class _MyHomePageState extends State<MyHomePage> {
 //              padding: const EdgeInsets.only(left: 10,right: 10),
 //              onPressed: canInput?onLogin:null,
               onPressed:(){
-                onLogin();
+//                onLogin();
+                GotoPage();
                 FocusScope.of(context).requestFocus(FocusNode());
                 },
               color: canInput?Colors.blue:Colors.grey,
